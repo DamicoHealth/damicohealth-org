@@ -39,6 +39,14 @@
     charts.forEach(function (c) { seen.observe(c); });
   }
 
+  // Smooth mouse-wheel scrolling on computers. Phones and tablets keep their native scrolling,
+  // and so does anyone who has asked their system for reduced motion.
+  var desktopPointer = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (window.Lenis && desktopPointer && !calm) {
+    // Section links land below the sticky bars via scroll-padding-top in the stylesheet.
+    new window.Lenis({ autoRaf: true, lerp: 0.14, anchors: true });
+  }
+
   // Our work: mark the section being read in the on-page menu.
   var pageNav = document.querySelector(".work-nav");
   if (pageNav && "IntersectionObserver" in window) {

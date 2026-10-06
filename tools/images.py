@@ -6,6 +6,7 @@ from PIL import Image, ImageOps
 Image.MAX_IMAGE_PIXELS = None
 SRC, OUT = sys.argv[1], sys.argv[2]
 WIDTHS = [480, 960, 1600, 2400]
+QUALITY = {"mural": 58, "emr-intake": 66}  # heavily textured photos compress poorly; default is 76
 PHOTOS = {
     "consultation":   ("E.jpg", None),
     "erhardt-path":   ("E-1.jpg", None),
@@ -44,7 +45,7 @@ for pid, (fn, crop) in PHOTOS.items():
         if tw > w and made: break
         tw2 = min(tw, w)
         r = im.resize((tw2, round(h*tw2/w)), Image.LANCZOS)
-        r.save(os.path.join(OUT, f"{pid}-{tw2}.webp"), "WEBP", quality=76, method=6)
+        r.save(os.path.join(OUT, f"{pid}-{tw2}.webp"), "WEBP", quality=QUALITY.get(pid, 76), method=6)
         made.append(tw2)
     manifest[pid] = {"w": w, "h": h, "widths": made}
     print(pid, w, h, made)
