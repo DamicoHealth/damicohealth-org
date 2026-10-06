@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{{robots}}
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Damico Health">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{share_image}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#16233F">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/touch-icon.png">
+{{fonts}}
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"Damico Health","legalName":"Damico Health Inc.","url":"https://damicohealth.org","logo":"https://damicohealth.org/assets/img/touch-icon.png","email":"md@damicohealth.org","nonprofitStatus":"Nonprofit501c3","areaServed":"Mukono District, Uganda","sameAs":["https://www.facebook.com/profile.php?id=100090807070449","https://www.instagram.com/damicohealth/"]}
+</script>
+</head>
+<body class="{{body_class}}">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="{{home}}" aria-label="Damico Health home">
+      <img src="assets/img/logo.svg" width="225" height="40" alt="Damico Health">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle-bars" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="about.html"{{nav_about}}>About</a></li>
+        <li class="has-sub">
+          <a href="our-work.html"{{nav_work}}>Our work</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-label="Show programs"></button>
+          <ul class="sub">
+            <li><a href="acute-surgical-care.html">Acute surgical care</a></li>
+            <li><a href="womens-health.html">Women's health</a></li>
+            <li><a href="palliative-care.html">Palliative care</a></li>
+            <li><a href="imaging-and-ultrasound.html">Imaging and ultrasound</a></li>
+            <li><a href="education.html">Education</a></li>
+          </ul>
+        </li>
+        <li><a href="dh-emr.html"{{nav_emr}}>Field EMR</a></li>
+        <li><a href="our-team.html"{{nav_team}}>Our team</a></li>
+        <li><a href="contact.html"{{nav_contact}}>Contact</a></li>
+        <li class="nav-donate"><a class="btn btn-primary" href="donate.html"{{nav_donate}}>Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{content}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <img src="assets/img/logo-light.svg" width="225" height="40" alt="Damico Health" loading="lazy">
+      <p>Year-round medical care for underserved communities in Mukono District, Uganda.</p>
+      <p class="footer-legal">Damico Health Inc. is a registered 501(c)(3) nonprofit. Contributions are tax-deductible to the extent permitted by law.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <div>
+        <h2>Our work</h2>
+        <ul>
+          <li><a href="acute-surgical-care.html">Acute surgical care</a></li>
+          <li><a href="womens-health.html">Women's health</a></li>
+          <li><a href="palliative-care.html">Palliative care</a></li>
+          <li><a href="imaging-and-ultrasound.html">Imaging and ultrasound</a></li>
+          <li><a href="education.html">Education</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Organization</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-team.html">Our team</a></li>
+          <li><a href="dh-emr.html">DH Field EMR</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="footer-contact">
+      <h2>Stay in touch</h2>
+      {{include signup}}
+      <p><a href="mailto:md@damicohealth.org">md@damicohealth.org</a></p>
+      <p class="social">
+        <a href="https://www.facebook.com/profile.php?id=100090807070449" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/damicohealth/" rel="noopener">Instagram</a>
+      </p>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>&copy; {{year}} Damico Health Inc. All rights reserved.</p>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
