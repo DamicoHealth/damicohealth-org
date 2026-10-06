@@ -58,6 +58,18 @@
     Object.keys(links).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
+  // Copy-to-clipboard buttons (contact page).
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+    var status = btn.parentNode.querySelector(".copy-status");
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy");
+      function done(ok) { if (status) status.textContent = ok ? "Copied" : "Select the address above to copy it"; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else { done(false); }
+    });
+  });
+
   // Email signup. Set data-endpoint on the form to the mailing-list provider's form address.
   document.querySelectorAll("form.signup").forEach(function (form) {
     var status = form.querySelector(".signup-status");
