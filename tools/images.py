@@ -12,6 +12,7 @@ PHOTOS = {
     "team-four":      ("IC-2.jpg", None),
     "team-backs":     ("IC-1.jpg", None),
     "team-two":       ("Icon-3.jpg", None),
+    "team-pair":      ("WP.jpg", None),
     "intake-notes":   ("Icon-4.jpg", None),
     "team-three":     ("Icon-6.jpg", None),
     "clinic-baby":    ("Icon-7.jpg", None),
@@ -28,8 +29,11 @@ PHOTOS = {
     "erhardt":        ("HS-4.jpg", None),
     "desk-pair":      ("U-41.jpg", None),
 }
-manifest = {}
+only = set(sys.argv[3:])
+mpath = os.path.join(OUT, "manifest.json")
+manifest = json.load(open(mpath)) if only and os.path.exists(mpath) else {}
 for pid, (fn, crop) in PHOTOS.items():
+    if only and pid not in only: continue
     im = ImageOps.exif_transpose(Image.open(os.path.join(SRC, fn))).convert("RGB")
     if crop:
         w, h = im.size
@@ -45,7 +49,8 @@ for pid, (fn, crop) in PHOTOS.items():
     manifest[pid] = {"w": w, "h": h, "widths": made}
     print(pid, w, h, made)
 # social share image
-im = ImageOps.exif_transpose(Image.open(os.path.join(SRC, "IC-2.jpg"))).convert("RGB")
-im = ImageOps.fit(im, (1200, 630), Image.LANCZOS, centering=(0.5, 0.45))
-im.save(os.path.join(OUT, "share.jpg"), quality=84, optimize=True)
+if not only:
+  im = ImageOps.exif_transpose(Image.open(os.path.join(SRC, "IC-2.jpg"))).convert("RGB")
+  im = ImageOps.fit(im, (1200, 630), Image.LANCZOS, centering=(0.5, 0.45))
+  im.save(os.path.join(OUT, "share.jpg"), quality=84, optimize=True)
 json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)

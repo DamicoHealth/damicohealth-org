@@ -1,17 +1,306 @@
 title: Our work | Damico Health
-description: Damico Health runs five year-round programs in Mukono District, Uganda: acute surgical care, women's health, palliative care, imaging and ultrasound, and education.
+description: Damico Health runs five year-round programs in Uganda: acute surgical care, women's health, palliative care, imaging and ultrasound, and education. See the work and the data behind it.
 nav: work
+class: work-page
 ---
-<section class="page-head page-head-plain">
-  <div class="wrap">
-    <h1>Our work</h1>
-    <p class="lead">Five programs, run all year by a team based in Mukono District. Each one is built around care that changes a patient's life and around the local providers who deliver it.</p>
+<section class="work-hero">
+  <div class="wrap work-hero-grid">
+    <div class="work-hero-text">
+      <h1>Our work</h1>
+      <p class="lead">Five programs, run all year by our team in Uganda. Each one is built around care that changes a patient's life, and around the local providers who deliver it.</p>
+    </div>
+    <dl class="figures">
+      <div>
+        <dt>2,500+</dt>
+        <dd>patient visits recorded across three years of outreach clinics</dd>
+      </div>
+      <div>
+        <dt>2 in 3</dt>
+        <dd>of the patients we see are women</dd>
+      </div>
+      <div>
+        <dt>4 in 5</dt>
+        <dd>patients who faced a barrier to care named cost</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
-<section class="section section-tight-top">
+<nav class="work-nav" aria-label="On this page">
   <div class="wrap">
-    {{include programs}}
+    <ul>
+      <li><a href="#acute-surgical-care">Surgical care</a></li>
+      <li><a href="#womens-health">Women's health</a></li>
+      <li><a href="#palliative-care">Palliative care</a></li>
+      <li><a href="#imaging-and-ultrasound">Imaging</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#access">Access to care</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Acute surgical care -->
+<section class="work" id="acute-surgical-care">
+  <div class="work-row">
+    <div class="work-text">
+      <h2>Acute surgical care</h2>
+      <p class="work-lead">Surgical disease is one of the most under-addressed health needs in rural Uganda, and it is often the most life-altering to treat.</p>
+      <p>Our surgical program, led by our Chief of Surgery Dr. Kansiime Erhardt, brings experienced surgeons together with local hospitals to deliver care that changes lives.</p>
+      <p>We consult year-round and partner with local hospitals, using their operating theaters and bringing in surgeons from the cities to provide surgical care close to the patients who need it. This model strengthens local institutions rather than bypassing them.</p>
+    </div>
+    <div class="work-photo">
+      {{photo id="consultation" alt="A Damico Health physician talks with a mother and her children across a wooden desk in a village clinic room." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 42%"}}
+    </div>
+  </div>
+  <div class="wrap work-data">
+    <figure class="viz" aria-labelledby="viz-surgery">
+      <figcaption id="viz-surgery">Operations on a single surgical day</figcaption>
+      <ul class="unit-rows">
+        <li class="is-lead" tabindex="0" data-tip="5 of 12 operations"><span class="unit-label">Inguinal hernia repair</span><span class="dots" aria-hidden="true">{{dots n="5"}}</span><span class="unit-value">5</span></li>
+        <li tabindex="0" data-tip="2 of 12 operations"><span class="unit-label">Hydrocele repair</span><span class="dots" aria-hidden="true">{{dots n="2"}}</span><span class="unit-value">2</span></li>
+        <li tabindex="0" data-tip="2 of 12 operations"><span class="unit-label">Lipoma excision</span><span class="dots" aria-hidden="true">{{dots n="2"}}</span><span class="unit-value">2</span></li>
+        <li tabindex="0" data-tip="3 of 12 operations"><span class="unit-label">Other minor procedures</span><span class="dots" aria-hidden="true">{{dots n="3"}}</span><span class="unit-value">3</span></li>
+      </ul>
+      <p class="viz-note">Twelve operations in one day at a partner hospital. Each dot is one patient.</p>
+    </figure>
+    <div class="work-aside">
+      <h3>Why hernia repair</h3>
+      <p>Much of our work focuses on hernia repair. Untreated hernias are among the most common causes of bowel obstruction in our patient population, a dangerous and sometimes fatal condition. By performing preventive hernia surgery, we address a serious risk before it becomes an emergency.</p>
+      <p>We also take on significant corrective and reconstructive procedures that meaningfully restore quality of life.</p>
+      {{include lead-erhardt}}
+    </div>
+  </div>
+</section>
+
+<!-- Women's health -->
+<section class="work work-flip" id="womens-health">
+  <div class="work-row">
+    <div class="work-text">
+      <h2>Women's health</h2>
+      <p class="work-lead">Essential reproductive, maternal and preventive care for women in underserved communities.</p>
+      <p>We combine acute treatment with preventive services, including cervical cancer screening, to address both immediate needs and long-term health.</p>
+      <p>Routine cervical cancer screening anchors our prevention work, identifying one of the most common causes of cancer-related death among women in Uganda early enough to act. Alongside screening, we deliver family planning, maternal health counseling, and treatment for acute gynecologic conditions, giving women care that is both immediately useful and lasting in its impact.</p>
+    </div>
+    <div class="work-photo">
+      {{photo id="team-pair" alt="Two women on the Damico Health team stand together, smiling." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 22%"}}
+    </div>
+  </div>
+  <div class="wrap work-data">
+    <figure class="viz" aria-labelledby="viz-fp">
+      <figcaption id="viz-fp">Family planning methods provided, year one and year two</figcaption>
+      <ul class="legend" aria-hidden="true">
+        <li><span class="key key-a"></span>Year one</li>
+        <li><span class="key key-b"></span>Year two</li>
+      </ul>
+      <dl class="pairs">
+        <div tabindex="0" data-tip="19 in year one, 99 in year two">
+          <dt>Three-month injectable (Sayana Press)</dt>
+          <dd><span class="pair-bar pair-a" style="--v:19.2%"></span><span class="pair-value">19</span></dd>
+          <dd><span class="pair-bar pair-b" style="--v:100%"></span><span class="pair-value">99</span></dd>
+        </div>
+        <div tabindex="0" data-tip="5 in year one, 25 in year two">
+          <dt>Contraceptive implants</dt>
+          <dd><span class="pair-bar pair-a" style="--v:5.1%"></span><span class="pair-value">5</span></dd>
+          <dd><span class="pair-bar pair-b" style="--v:25.3%"></span><span class="pair-value">25</span></dd>
+        </div>
+        <div tabindex="0" data-tip="6 in year one, 14 in year two">
+          <dt>Three-month injectable (Depo-Provera)</dt>
+          <dd><span class="pair-bar pair-a" style="--v:6.1%"></span><span class="pair-value">6</span></dd>
+          <dd><span class="pair-bar pair-b" style="--v:14.1%"></span><span class="pair-value">14</span></dd>
+        </div>
+      </dl>
+      <p class="viz-note">Use of Sayana Press and of implants each grew about five-fold from one year to the next.</p>
+    </figure>
+    <div class="work-aside">
+      <dl class="stat-list">
+        <div>
+          <dt>150</dt>
+          <dd>HIV tests in year two, up from 67 the year before</dd>
+        </div>
+        <div>
+          <dt>5 of 38</dt>
+          <dd>women screened for cervical cancer had a positive result. Every one was referred for treatment.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Palliative care -->
+<section class="work" id="palliative-care">
+  <div class="work-row">
+    <div class="work-text">
+      <h2>Palliative care</h2>
+      <p class="work-lead">Comfort, dignity and medical expertise for patients and families facing serious or life-limiting illness.</p>
+      <p>Our palliative care program is led by Dr. Gloria Wafula, one of the few formally trained palliative care specialists in the region.</p>
+      <p>Our approach is built on home visits and community-centered care. We travel to remote and underserved areas, reaching patients in their homes where access to formal health facilities is difficult or impossible.</p>
+      <p>Our teams provide pain management, symptom control, and essential medications, along with psychosocial support for both patients and caregivers. For patients who would otherwise suffer without relief, this care ensures no one is left behind because of distance or cost.</p>
+    </div>
+    <div class="work-photo">
+      {{photo id="clinic-baby" alt="A nurse holds a newborn and smiles while a colleague takes an older patient's blood pressure." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 40%"}}
+    </div>
+  </div>
+  <div class="wrap work-data">
+    <figure class="viz" aria-labelledby="viz-pain">
+      <figcaption id="viz-pain">How clinic patients rated their pain, from 0 to 10</figcaption>
+      <ol class="histo">
+        <li tabindex="0" data-tip="16 patients" style="--h:47.1%"><span class="histo-col"></span><span class="histo-x">0</span></li>
+        <li tabindex="0" data-tip="6 patients" style="--h:17.6%"><span class="histo-col"></span><span class="histo-x">1</span></li>
+        <li tabindex="0" data-tip="6 patients" style="--h:17.6%"><span class="histo-col"></span><span class="histo-x">2</span></li>
+        <li tabindex="0" data-tip="6 patients" style="--h:17.6%"><span class="histo-col"></span><span class="histo-x">3</span></li>
+        <li tabindex="0" data-tip="12 patients" style="--h:35.3%"><span class="histo-col"></span><span class="histo-x">4</span></li>
+        <li tabindex="0" data-tip="17 patients" style="--h:50%"><span class="histo-col"></span><span class="histo-x">5</span></li>
+        <li tabindex="0" data-tip="21 patients" style="--h:61.8%"><span class="histo-col"></span><span class="histo-x">6</span></li>
+        <li class="is-lead" tabindex="0" data-tip="34 patients" style="--h:100%"><span class="histo-col"></span><span class="histo-x">7</span></li>
+        <li class="is-lead" tabindex="0" data-tip="29 patients" style="--h:85.3%"><span class="histo-col"></span><span class="histo-x">8</span></li>
+        <li class="is-lead" tabindex="0" data-tip="22 patients" style="--h:64.7%"><span class="histo-col"></span><span class="histo-x">9</span></li>
+        <li class="is-lead" tabindex="0" data-tip="14 patients" style="--h:41.2%"><span class="histo-col"></span><span class="histo-x">10</span></li>
+      </ol>
+      <p class="viz-note"><strong>54% rated their pain 7 or higher.</strong> Responses from 183 general clinic patients who were asked to score their pain.</p>
+    </figure>
+    <div class="work-aside">
+      <h3>Care that does not stop</h3>
+      <p>Palliative care runs year-round, not only during visits. Dr. Wafula and the in-country team maintain continuity for patients between deployments, following complex cases and ensuring care does not stop when a trip ends.</p>
+      {{include lead-gloria}}
+    </div>
+  </div>
+</section>
+
+<!-- Imaging and ultrasound -->
+<section class="work work-flip" id="imaging-and-ultrasound">
+  <div class="work-row">
+    <div class="work-text">
+      <h2>Imaging and ultrasound</h2>
+      <p class="work-lead">In settings where advanced imaging is hours away and unaffordable, a portable ultrasound in the hands of a trained clinician can change the course of a patient's life in minutes.</p>
+      <p>Portable ultrasound is one of the most powerful tools we bring to the communities we serve, and we use it year-round.</p>
+      <p>Ultrasound lets us diagnose at the bedside, in clinics, and in patients' homes, without referral to a distant facility. It guides our women's health, surgical, and acute care work, and it has repeatedly turned a routine visit into a life-saving intervention.</p>
+    </div>
+    <div class="work-photo">
+      {{photo id="ultrasound" alt="A clinician reviews a bedside ultrasound image on a tablet mounted in front of a blue privacy screen." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 42%"}}
+    </div>
+  </div>
+  <div class="wrap work-data work-data-stack">
+    <div class="cases">
+      <article class="case">
+        <h3>An ectopic pregnancy, found at a routine visit</h3>
+        <ol class="case-steps">
+          <li><strong>The visit.</strong> A pregnant woman was seen for evaluation during a routine clinic.</li>
+          <li><strong>The scan.</strong> Bedside ultrasound revealed an ectopic pregnancy, a life-threatening condition that is easily missed without imaging.</li>
+          <li><strong>The result.</strong> Immediate referral and surgical management, very likely saving her life.</li>
+        </ol>
+      </article>
+      <article class="case">
+        <h3>A complete placenta previa, found in the second trimester</h3>
+        <ol class="case-steps">
+          <li><strong>The visit.</strong> A woman in the second trimester of pregnancy came in for a scan.</li>
+          <li><strong>The scan.</strong> Ultrasound showed a complete placenta previa, which can cause catastrophic bleeding if undetected before delivery.</li>
+          <li><strong>The result.</strong> Her care team planned a safe delivery rather than facing an emergency.</li>
+        </ol>
+      </article>
+    </div>
+    <div class="work-data-split">
+      <figure class="viz" aria-labelledby="viz-scan">
+        <figcaption id="viz-scan">Obstetric and gynecologic scans in one year of clinics</figcaption>
+        <ul class="unit-rows unit-rows-wide">
+          <li class="is-lead" tabindex="0" data-tip="25 of 35 scans"><span class="unit-label">Obstetric</span><span class="dots" aria-hidden="true">{{dots n="25"}}</span><span class="unit-value">25</span></li>
+          <li tabindex="0" data-tip="10 of 35 scans"><span class="unit-label">Gynecologic</span><span class="dots" aria-hidden="true">{{dots n="10"}}</span><span class="unit-value">10</span></li>
+        </ul>
+        <p class="viz-note">Each dot is one patient scanned at the bedside, with no referral to a distant facility.</p>
+      </figure>
+      <div class="work-aside">
+        <p>These are not rare exceptions. They are examples of what becomes possible when the right tool reaches the right place. For us, portable ultrasound is not optional equipment. It is a core part of how we deliver care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section class="work" id="education">
+  <div class="work-row">
+    <div class="work-text">
+      <h2>Education</h2>
+      <p class="work-lead">Strengthening the knowledge of local providers improves care for far more patients than any single clinician can reach directly.</p>
+      <p>Education is one of the highest-impact things we do. In the communities we serve, the person managing a patient is often a nurse or a village-level provider working with limited training and few resources.</p>
+      <p>This work happens year-round through our in-country team led by Dr. Gloria Wafula, and directly during our visits. By investing in local providers rather than working around them, we help build a healthcare system that grows stronger over time.</p>
+    </div>
+    <div class="work-photo">
+      {{photo id="mural" alt="A hand-painted anatomy mural of a labeled skeleton on an orange classroom wall." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 4%"}}
+    </div>
+  </div>
+  <div class="wrap work-data work-data-stack">
+    <div class="directions">
+      <h3>We teach in two directions</h3>
+      <div class="directions-grid">
+        <div class="direction">
+          <h4>Patients</h4>
+          <p>Practical, culturally relevant health information they can act on with the resources they actually have.</p>
+        </div>
+        <div class="direction direction-lead">
+          <h4>Providers</h4>
+          <p>Hands-on, practical training for the local nurses, clinicians and village-level providers who deliver care every day, addressing real gaps in clinical knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Access to care -->
+<section class="band band-navy access" id="access">
+  <div class="wrap">
+    <div class="access-head">
+      <h2>What patients tell us about getting care</h2>
+      <p>We ask the people we treat how they reached us and what had kept them from care before. Their answers shape where we put our effort.</p>
+    </div>
+
+    <div class="access-top">
+      <figure class="chart viz-dark" aria-labelledby="viz-barrier">
+        <figcaption id="viz-barrier">What kept you from getting care sooner?</figcaption>
+        <dl class="bars">
+          <div class="bar bar-lead" tabindex="0" data-tip="60 of 72 patients"><dt>Cost</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:83.3%"></span></span><span class="bar-value">83%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="16 of 72 patients"><dt>Distance</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:22.2%"></span></span><span class="bar-value">22%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="3 of 72 patients"><dt>Other reasons</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:4.2%"></span></span><span class="bar-value">4%</span></dd></div>
+        </dl>
+        <p class="chart-source">72 responses. Patients could give more than one reason.</p>
+      </figure>
+      <figure class="chart viz-dark matrix" aria-labelledby="viz-delay">
+        <figcaption id="viz-delay">Patients who put off care, and why</figcaption>
+        <p class="matrix-figure"><strong>85 of 86</strong> said cost was the reason they waited.</p>
+        <div class="dots dots-matrix" role="img" aria-label="86 dots, 85 highlighted">{{dots n="85" class="on"}}{{dots n="1"}}</div>
+        <p class="chart-source">More than half of the patients we asked had delayed seeking care (95 of 175).</p>
+      </figure>
+    </div>
+
+    <div class="trio">
+      <figure class="chart viz-dark" aria-labelledby="viz-dist">
+        <figcaption id="viz-dist">How far patients travel</figcaption>
+        <dl class="bars bars-compact">
+          <div class="bar" tabindex="0" data-tip="91 of 245 patients"><dt>Under 5 km</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:37.1%"></span></span><span class="bar-value">37%</span></dd></div>
+          <div class="bar bar-top" tabindex="0" data-tip="143 of 245 patients"><dt>5 to 10 km</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:58.4%"></span></span><span class="bar-value">58%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="11 of 245 patients"><dt>Over 10 km</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:4.5%"></span></span><span class="bar-value">4%</span></dd></div>
+        </dl>
+      </figure>
+      <figure class="chart viz-dark" aria-labelledby="viz-time">
+        <figcaption id="viz-time">How long the trip takes</figcaption>
+        <dl class="bars bars-compact">
+          <div class="bar" tabindex="0" data-tip="84 of 252 patients"><dt>Under 30 minutes</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:33.3%"></span></span><span class="bar-value">33%</span></dd></div>
+          <div class="bar bar-top" tabindex="0" data-tip="147 of 252 patients"><dt>30 to 60 minutes</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:58.3%"></span></span><span class="bar-value">58%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="21 of 252 patients"><dt>Over an hour</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:8.3%"></span></span><span class="bar-value">8%</span></dd></div>
+        </dl>
+      </figure>
+      <figure class="chart viz-dark" aria-labelledby="viz-mode">
+        <figcaption id="viz-mode">How they get there</figcaption>
+        <dl class="bars bars-compact">
+          <div class="bar bar-top" tabindex="0" data-tip="160 of 259 patients"><dt>Motorcycle taxi</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:61.8%"></span></span><span class="bar-value">62%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="78 of 259 patients"><dt>On foot</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:30.1%"></span></span><span class="bar-value">30%</span></dd></div>
+          <div class="bar" tabindex="0" data-tip="21 of 259 patients"><dt>Car or other</dt><dd><span class="bar-track"><span class="bar-fill" style="--v:8.1%"></span></span><span class="bar-value">8%</span></dd></div>
+        </dl>
+      </figure>
+    </div>
+
+    <div class="access-close">
+      <p>Nine in ten patients reach us in under an hour. Distance is rarely what stops them from getting care. Cost is. People are willing to travel, sometimes long distances, when they know they can get the care they need. By removing the cost barrier and bringing care to trusted local facilities, we reach patients who would otherwise go without.</p>
+      <p class="access-note">Figures come from Damico Health clinic records and patient surveys. All data is aggregated and anonymous.</p>
+    </div>
   </div>
 </section>
 

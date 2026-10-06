@@ -24,19 +24,38 @@
     });
   });
 
-  // Bars are full width by default; they grow in once when the chart scrolls into view.
-  var chart = document.querySelector(".chart");
+  // Marks are drawn at full size by default; each chart grows in once when it scrolls into view.
+  var charts = document.querySelectorAll(".chart, .viz");
   var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (chart && !calm && "IntersectionObserver" in window) {
+  if (charts.length && !calm && "IntersectionObserver" in window) {
     var seen = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          chart.classList.add("is-animated");
-          seen.disconnect();
+          entry.target.classList.add("is-animated");
+          seen.unobserve(entry.target);
         }
       });
     }, { threshold: 0.35 });
-    seen.observe(chart);
+    charts.forEach(function (c) { seen.observe(c); });
+  }
+
+  // Our work: mark the section being read in the on-page menu.
+  var pageNav = document.querySelector(".work-nav");
+  if (pageNav && "IntersectionObserver" in window) {
+    var links = {};
+    pageNav.querySelectorAll("a").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        Object.keys(links).forEach(function (id) { links[id].classList.toggle("is-current", id === entry.target.id); });
+        var cur = links[entry.target.id];
+        if (cur && cur.scrollIntoView) {
+          var list = cur.closest("ul");
+          list.scrollLeft = cur.offsetLeft - list.clientWidth / 2 + cur.clientWidth / 2;
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    Object.keys(links).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   }
 
   // Email signup. Set data-endpoint on the form to the mailing-list provider's form address.

@@ -21,8 +21,8 @@ async def main():
             await pg.goto(f"http://127.0.0.1:{port}/{name}", wait_until="networkidle")
             h = await pg.evaluate("document.documentElement.scrollHeight")
             for y in range(0, h, 600):
-                await pg.evaluate(f"window.scrollTo(0,{y})"); await pg.wait_for_timeout(120)
-            await pg.evaluate("window.scrollTo(0,0)"); await pg.wait_for_timeout(700)
+                await pg.evaluate(f"window.scrollTo({{top:{y},behavior:'instant'}})"); await pg.wait_for_timeout(120)
+            await pg.evaluate("window.scrollTo({top:0,behavior:'instant'})"); await pg.wait_for_timeout(700)
             ow = await pg.evaluate("document.documentElement.scrollWidth")
             await pg.screenshot(path=f"{out}/{name.replace('.html','')}-{width}.png", full_page=True)
             print(name, "scrollWidth", ow, "errors", errs[-5:]); errs.clear()

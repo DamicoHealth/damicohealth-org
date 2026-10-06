@@ -40,11 +40,17 @@ def photo(m):
     return (f'<img src="assets/img/{pid}-{default}.webp" srcset="{srcset}" sizes="{a.get("sizes", "100vw")}" '
             f'width="{info["w"]}" height="{info["h"]}" alt="{a.get("alt", "")}"{cls}{style}{load} decoding="async">')
 
+def dots(m):
+    a = attrs(m.group(1))
+    cls = f' class="{a["class"]}"' if a.get("class") else ""
+    return f"<i{cls}></i>" * int(a["n"])
+
 def render(text, ctx, depth=0):
     def inc(m):
         return render((SRC / "partials" / f"{m.group(1)}.html").read_text(), ctx, depth + 1)
     text = re.sub(r"\{\{include (\S+?)\}\}", inc, text)
     text = re.sub(r"\{\{photo (.+?)\}\}", photo, text)
+    text = re.sub(r"\{\{dots (.+?)\}\}", dots, text)
     def var(m):
         k = m.group(1)
         if k not in ctx: sys.exit(f"Unknown placeholder {{{{{k}}}}}")
