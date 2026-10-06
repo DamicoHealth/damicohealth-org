@@ -121,7 +121,9 @@ ul, ol, dl, dd, figure { margin: 0; padding: 0; }
 @media (max-width: 56.24rem) {
   .hero { grid-template-columns: 1fr; }
   .hero-text { grid-column: 1; padding-inline: var(--gutter); padding-block: 2.5rem 2rem; }
-  .hero-photo { grid-column: 1; min-height: 0; aspect-ratio: 4 / 3; }
+  /* The photo sets its own height here. Sizing the empty frame instead collapses to nothing in Safari on iPhone and iPad. */
+  .hero-photo { grid-column: 1; min-height: 0; align-self: start; }
+  .hero-photo img { position: static; height: auto; aspect-ratio: 4 / 3; }
 }
 
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2.5rem; padding-block: 2.25rem; }
@@ -405,7 +407,8 @@ html:has(.work-page) { scroll-padding-top: calc(var(--header-h) + 4.5rem); }
 @media (max-width: 56.24rem) {
   .work-row { grid-template-columns: 1fr; }
   .work-text, .work-flip .work-text { grid-column: 1; grid-row: 2; padding: 1.75rem var(--gutter) 0; }
-  .work-photo, .work-flip .work-photo { grid-column: 1; grid-row: 1; min-height: 0; aspect-ratio: 4 / 3; border-radius: 0; }
+  .work-photo, .work-flip .work-photo { grid-column: 1; grid-row: 1; min-height: 0; align-self: start; border-radius: 0; }
+  .work-photo img { position: static; height: auto; aspect-ratio: 4 / 3; }
   .work-data, .work-data-split { grid-template-columns: 1fr; }
 }
 
