@@ -23,6 +23,27 @@ FONT_LINKS = {
     "preview": '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&family=Gabarito:wght@500..800&display=swap">',
 }
 
+PREVIEW_MAIL_GUARD = """<script>
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+  if (!a) return;
+  e.preventDefault();
+  var note = document.getElementById("preview-note");
+  if (!note) {
+    note = document.createElement("div");
+    note.id = "preview-note";
+    note.setAttribute("role", "status");
+    note.style.cssText = "position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);z-index:999;max-width:calc(100% - 2rem);background:#0E1830;color:#fff;font:600 0.9375rem/1.4 sans-serif;padding:0.75rem 1.125rem;border-radius:0.75rem;box-shadow:0 10px 30px rgba(14,24,48,.35)";
+    document.body.appendChild(note);
+  }
+  note.textContent = "Email links are switched off in this preview. On the live site this opens your mail app.";
+  clearTimeout(note._t);
+  note.hidden = false;
+  note._t = setTimeout(function () { note.hidden = true; }, 5000);
+});
+</script>
+"""
+
 def attrs(s):
     return dict(re.findall(r'(\w[\w-]*)="([^"]*)"', s))
 
@@ -90,6 +111,9 @@ def build(target):
         if slug == "404" and target == "dist":
             page = page.replace("<head>", '<head>\n<base href="/">', 1)  # a 404 can be served from any path
         if chr(0x2014) in page: sys.exit(f"Em dash found in {slug}")
+        if target == "preview":
+            # The review host shows pages in a frame where mail links blank the page; switch them off there only.
+            page = page.replace("</body>", PREVIEW_MAIL_GUARD + "</body>")
         if target == "preview" and is_home:
             # the review host wraps the home page in its own <html>/<head>/<body>
             head = re.search(r"<head>(.*?)</head>", page, re.S).group(1)
