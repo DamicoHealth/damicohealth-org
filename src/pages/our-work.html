@@ -54,7 +54,7 @@ class: work-page
   </div>
   <div class="wrap work-data">
     <figure class="viz" aria-labelledby="viz-surgery">
-      <figcaption id="viz-surgery">Operations performed, by type</figcaption>
+      <figcaption id="viz-surgery">Operations performed in a single day, by type</figcaption>
       <ul class="unit-rows">
         <li class="is-lead" tabindex="0" data-tip="12 of 29 operations"><span class="unit-label">Inguinal hernia repair</span><span class="dots" aria-hidden="true">{{dots n="12"}}</span><span class="unit-value">12</span></li>
         <li tabindex="0" data-tip="5 of 29 operations"><span class="unit-label">Abdominal surgery</span><span class="dots" aria-hidden="true">{{dots n="5"}}</span><span class="unit-value">5</span></li>
@@ -62,7 +62,7 @@ class: work-page
         <li tabindex="0" data-tip="6 of 29 operations"><span class="unit-label">Other major surgery</span><span class="dots" aria-hidden="true">{{dots n="6"}}</span><span class="unit-value">6</span></li>
         <li tabindex="0" data-tip="3 of 29 operations"><span class="unit-label">Other minor procedures</span><span class="dots" aria-hidden="true">{{dots n="3"}}</span><span class="unit-value">3</span></li>
       </ul>
-      <p class="viz-note">Each dot is one operation.</p>
+      <p class="viz-note">29 operations in one day of surgery. Each dot is one operation.</p>
     </figure>
     <div class="work-aside">
       <h3>Why hernia repair</h3>
@@ -129,26 +129,22 @@ class: work-page
       {{photo id="clinic-baby" alt="A nurse holds a newborn and smiles while a colleague takes an older patient's blood pressure." sizes="(min-width: 900px) 50vw, 100vw" pos="50% 40%"}}
     </div>
   </div>
-  <div class="wrap work-data">
-    <figure class="viz" aria-labelledby="viz-pall">
-      <figcaption id="viz-pall">Ugandans who need palliative care, and those who can get it</figcaption>
-      <p class="viz-figure"><strong>11 in 100</strong> can access the care they need.</p>
-      <div class="dots dots-grid" role="img" aria-label="100 dots, 11 highlighted">{{dots n="11" class="on"}}{{dots n="89"}}</div>
-      <p class="viz-note">Source: <a href="https://hejnu.ug/only-11-percent-of-the-ugandans-in-need-of-palliative-care-can-access-it/" rel="noopener">Palliative Care Association of Uganda</a>, 2023.</p>
-    </figure>
-    <div class="work-aside">
-      <dl class="stat-list">
-        <div>
-          <dt>9.7 million</dt>
-          <dd>people in Africa need palliative care, by World Health Organization estimates.</dd>
-        </div>
-        <div>
-          <dt>0.03%</dt>
-          <dd>of the world's morphine-equivalent pain medicine is distributed to low-income countries.</dd>
-        </div>
-      </dl>
-      <p class="viz-note">Sources: <a href="https://africanpalliativecare.org/palliative-care-africa-need" rel="noopener">African Palliative Care Association</a>; <a href="https://news.miami.edu/stories/2017/10/a-global-pain-crisis.html" rel="noopener">Lancet Commission on Palliative Care and Pain Relief</a>, 2017.</p>
-    </div>
+  <div class="wrap work-data work-data-stack">
+    <dl class="stat-row">
+      <div>
+        <dt>9 in 10</dt>
+        <dd>Ugandans who need palliative care cannot get it.</dd>
+      </div>
+      <div>
+        <dt>9.7 million</dt>
+        <dd>people in Africa need palliative care, by World Health Organization estimates.</dd>
+      </div>
+      <div>
+        <dt>0.03%</dt>
+        <dd>of the world's morphine-equivalent pain medicine is distributed to low-income countries.</dd>
+      </div>
+    </dl>
+    <p class="viz-note stat-sources">Sources: <a href="https://hejnu.ug/only-11-percent-of-the-ugandans-in-need-of-palliative-care-can-access-it/" rel="noopener">Palliative Care Association of Uganda</a>, 2023; <a href="https://africanpalliativecare.org/palliative-care-africa-need" rel="noopener">African Palliative Care Association</a>; <a href="https://news.miami.edu/stories/2017/10/a-global-pain-crisis.html" rel="noopener">Lancet Commission on Palliative Care and Pain Relief</a>, 2017.</p>
   </div>
 </section>
 
@@ -185,11 +181,12 @@ class: work-page
       </article>
     </div>
     <div class="work-data-split">
-      <figure class="viz" aria-labelledby="viz-scan">
-        <figcaption id="viz-scan">Obstetric and gynecologic ultrasounds performed</figcaption>
-        <p class="viz-figure"><strong>200+</strong> scans at the bedside, with no referral to a distant facility.</p>
-        <div class="dots dots-field" role="img" aria-label="200 dots, one for each scan">{{dots n="200" class="on"}}</div>
-      </figure>
+      <dl class="stat-list">
+        <div>
+          <dt>200+</dt>
+          <dd>obstetric and gynecologic ultrasounds performed at the bedside, with no referral to a distant facility.</dd>
+        </div>
+      </dl>
       <div class="work-aside">
         <p>These are not rare exceptions. They are examples of what becomes possible when the right tool reaches the right place. For us, portable ultrasound is not optional equipment. It is a core part of how we deliver care.</p>
       </div>

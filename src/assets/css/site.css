@@ -379,10 +379,9 @@ html:has(.work-page) { scroll-padding-top: calc(var(--header-h) + 4.5rem); }
 .work-nav a:hover { border-color: var(--line); }
 .work-nav a.is-current { background: var(--navy); color: var(--on-navy); }
 
-.work { padding-block: clamp(3.5rem, 7vw, 6.5rem) 0; scroll-margin-top: calc(var(--header-h) + 3rem); }
+.work { padding-block: clamp(3.5rem, 7vw, 6.5rem) 0; }
 .work:last-of-type { padding-bottom: clamp(3.5rem, 7vw, 6.5rem); }
 #education { padding-bottom: clamp(3.5rem, 7vw, 6.5rem); }
-#access { scroll-margin-top: calc(var(--header-h) + 3rem); }
 .work-row { display: grid; grid-template-columns: minmax(var(--gutter), 1fr) minmax(0, 37.5rem) minmax(0, 37.5rem) minmax(var(--gutter), 1fr); align-items: stretch; }
 .work-text { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; justify-content: center; gap: 1.125rem; padding-block: 1rem; padding-right: clamp(1.5rem, 4vw, 4rem); }
 .work-text h2 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem); letter-spacing: -0.02em; }
@@ -394,7 +393,7 @@ html:has(.work-page) { scroll-padding-top: calc(var(--header-h) + 4.5rem); }
 .work-flip .work-photo { grid-column: 1 / 3; border-radius: 0 1.5rem 1.5rem 0; }
 .work-data { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; margin-top: clamp(2rem, 4vw, 3.5rem); }
 .work-data-stack { grid-template-columns: 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); }
-.work-data-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.work-data-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .work-aside { display: flex; flex-direction: column; gap: 1rem; }
 .work-aside h3 { font-size: 1.5rem; }
 .work-aside p { color: var(--ink-soft); }
@@ -448,6 +447,13 @@ html:has(.work-page) { scroll-padding-top: calc(var(--header-h) + 4.5rem); }
 .histo .is-lead .histo-col { background: var(--orange); }
 .histo-x { position: absolute; top: calc(100% + 0.375rem); font-size: 0.875rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
 
+.stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem clamp(1.5rem, 4vw, 3.5rem); }
+.stat-row > div { border-top: 3px solid var(--navy); padding-top: 0.875rem; }
+.stat-row > div:first-child { border-top-color: var(--orange); }
+.stat-row dt { font-family: var(--display); font-weight: 700; font-size: clamp(2.25rem, 1.6rem + 2vw, 3rem); line-height: 1; letter-spacing: -0.02em; }
+.stat-row dd { margin-top: 0.5rem; color: var(--ink-soft); max-width: 22em; }
+.stat-sources { margin-top: 0; }
+@media (max-width: 47.99rem) { .stat-row { grid-template-columns: 1fr; } }
 .stat-list { display: flex; flex-direction: column; gap: 1.75rem; align-self: center; }
 .stat-list > div { border-top: 3px solid var(--navy); padding-top: 0.875rem; }
 .stat-list dt { font-family: var(--display); font-weight: 700; font-size: clamp(2.25rem, 1.6rem + 2vw, 3rem); line-height: 1; letter-spacing: -0.02em; }
@@ -480,14 +486,10 @@ html:has(.work-page) { scroll-padding-top: calc(var(--header-h) + 4.5rem); }
 .access-top { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2rem); }
 .matrix-figure { color: var(--on-navy-soft); font-size: 1.125rem; margin-bottom: 1.25rem; }
 .matrix-figure strong { display: block; font-family: var(--display); font-size: clamp(2.5rem, 1.8rem + 2.5vw, 3.5rem); line-height: 1; letter-spacing: -0.02em; color: var(--on-navy); margin-bottom: 0.5rem; }
-.dots-grid, .dots-matrix, .dots-field { display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 0.375rem; max-width: 27rem; }
-.dots-grid i, .dots-matrix i, .dots-field i { width: 100%; height: auto; aspect-ratio: 1; }
+.dots-matrix { display: grid; grid-template-columns: repeat(20, minmax(0, 1fr)); gap: 0.375rem; max-width: 27rem; }
+.dots-matrix i { width: 100%; height: auto; aspect-ratio: 1; }
 .viz-figure { color: var(--ink-soft); font-size: 1.125rem; margin-bottom: 1.25rem; }
 .viz-figure strong { display: block; font-family: var(--display); font-size: clamp(2.5rem, 1.8rem + 2.5vw, 3.5rem); line-height: 1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
-.dots-grid i { background: #C3CCDD; }
-.dots-grid i.on { background: var(--orange); }
-.dots-field { grid-template-columns: repeat(25, minmax(0, 1fr)); gap: 0.3125rem; }
-.dots-field i { background: var(--orange); }
 .viz-note a, .work-aside .viz-note a { color: var(--ink-soft); }
 .work-aside .viz-note { margin-top: 0.25rem; }
 .dots-matrix i { background: rgba(255, 255, 255, 0.22); }

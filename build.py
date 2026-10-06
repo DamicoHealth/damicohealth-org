@@ -104,7 +104,7 @@ def build(target):
             "robots": '<meta name="robots" content="noindex">' if meta.get("index") == "no" or target == "preview" else "",
             "body_class": meta.get("class", ""),
         }
-        for key in ("about", "work", "emr", "team", "contact", "donate"):
+        for key in ("home", "about", "work", "emr", "team", "contact", "donate"):
             ctx[f"nav_{key}"] = ' aria-current="page"' if meta.get("nav") == key else ""
         ctx["content"] = render(body, ctx)
         page = render(layout, ctx)
