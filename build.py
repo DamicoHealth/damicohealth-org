@@ -83,10 +83,36 @@ def load_page(path):
     meta = dict(line.split(":", 1) for line in head.strip().splitlines())
     return {k.strip(): v.strip() for k, v in meta.items()}, body
 
+def preview_strip(page):
+    # the review host wraps the page in its own <html>/<head>/<body>
+    head = re.search(r"<head>(.*?)</head>", page, re.S).group(1)
+    head = re.sub(r'<meta (charset|name="viewport")[^>]*>\n?', "", head)
+    body_html = re.search(r"<body[^>]*>(.*?)</body>", page, re.S).group(1)
+    return head.strip() + "\n" + body_html.strip() + "\n"
+
+def build_holding(target, out):
+    """Holding mode: a HOLDING file at the repository root publishes only src/holding.html.
+    Every address on the site shows it (it is served as both the home page and the not-found page).
+    Delete the HOLDING file and push to bring the full site back."""
+    ctx = {"fonts": FONT_LINKS[target], "year": date.today().year}
+    page = render((SRC / "holding.html").read_text(), ctx)
+    if chr(0x2014) in page: sys.exit("Em dash found in holding page")
+    if target == "preview":
+        page = page.replace("</body>", PREVIEW_MAIL_GUARD + "</body>")
+        (out / "index.html").write_text(preview_strip(page))
+    else:
+        (out / "index.html").write_text(page)
+        (out / "404.html").write_text(page.replace("<head>", '<head>\n<base href="/">', 1))
+        (out / "robots.txt").write_text("User-agent: *\nAllow: /\n")
+        (out / ".nojekyll").write_text("")
+    print(f"{target}: holding page only")
+
 def build(target):
     out = ROOT / target
     if out.exists(): shutil.rmtree(out)
     shutil.copytree(SRC / "assets", out / "assets", ignore=shutil.ignore_patterns("manifest.json", "fonts" if target == "preview" else "__none__", "fonts.css" if target == "preview" else "__none__"))
+    if (ROOT / "HOLDING").exists():
+        return build_holding(target, out)
     layout = (SRC / "layout.html").read_text()
     urls = []
     for path in sorted((SRC / "pages").glob("*.html")):
@@ -115,11 +141,7 @@ def build(target):
             # The review host shows pages in a frame where mail links blank the page; switch them off there only.
             page = page.replace("</body>", PREVIEW_MAIL_GUARD + "</body>")
         if target == "preview" and is_home:
-            # the review host wraps the home page in its own <html>/<head>/<body>
-            head = re.search(r"<head>(.*?)</head>", page, re.S).group(1)
-            head = re.sub(r'<meta (charset|name="viewport")[^>]*>\n?', "", head)
-            body_html = re.search(r"<body[^>]*>(.*?)</body>", page, re.S).group(1)
-            page = head.strip() + "\n" + body_html.strip() + "\n"
+            page = preview_strip(page)
         (out / f"{slug}.html").write_text(page)
         if meta.get("index") != "no": urls.append(ctx["canonical"])
     if target == "dist":

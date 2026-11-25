@@ -26,3 +26,7 @@ Add the original to the photo folder, add a line to `PHOTOS` in `tools/images.py
 ## Email signup
 
 The signup forms post to the address in their `data-endpoint` attribute (`src/partials/signup.html` and `signup-page.html`). It is empty until a mailing-list provider is chosen.
+
+## Holding page
+
+A file named `HOLDING` at the repository root switches the whole site to the single page in `src/holding.html`. Every address, including the old page links, shows that page. Delete the `HOLDING` file and push to bring the full site back; nothing else changes.
