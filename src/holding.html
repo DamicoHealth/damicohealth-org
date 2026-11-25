@@ -27,34 +27,24 @@ body {
   padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
   padding-top: calc(clamp(2rem, 6vw, 4rem) + env(safe-area-inset-top, 0px));
   padding-bottom: calc(clamp(2rem, 6vw, 4rem) + env(safe-area-inset-bottom, 0px));
-  gap: clamp(2rem, 5vw, 3.5rem);
+  gap: 1.25rem;
 }
-.paw { width: clamp(4.5rem, 12vw, 7rem); height: auto; }
+.org { font-family: "Gabarito", "Trebuchet MS", "Segoe UI", sans-serif; font-weight: 600; font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem); color: var(--orange); margin: 0; }
 h1 {
   font-family: "Gabarito", "Trebuchet MS", "Segoe UI", sans-serif; font-weight: 700;
   font-size: clamp(2.5rem, 2rem + 4vw, 5rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0; max-width: 12em; text-wrap: balance;
 }
-.holding p { margin: 0; color: var(--soft); max-width: 32em; }
-.holding a { color: var(--white); text-underline-offset: 0.2em; text-decoration-thickness: 0.08em; }
-.holding a:hover { text-decoration-thickness: 0.14em; }
-.holding a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; border-radius: 2px; }
-.wordmark { width: clamp(12rem, 28vw, 17rem); height: auto; opacity: 0.95; }
-.foot { font-size: 0.9375rem; color: var(--soft); }
 @media (prefers-reduced-motion: no-preference) {
   .holding > * { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
   .holding > :nth-child(2) { animation-delay: 0.12s; }
-  .holding > :nth-child(3) { animation-delay: 0.24s; }
-  .holding > :nth-child(4) { animation-delay: 0.36s; }
   @keyframes rise { from { opacity: 0; transform: translateY(0.75rem); } to { opacity: 1; transform: none; } }
 }
 </style>
 </head>
 <body>
 <main class="holding">
-  <img class="paw" src="assets/img/paw.svg" alt="" width="200" height="200">
+  <p class="org">Damico Health</p>
   <h1>Thank you for the journey.</h1>
-  <p>For questions, write to <a href="mailto:md@damicohealth.org">md@damicohealth.org</a>.</p>
-  <p class="foot"><img class="wordmark" src="assets/img/logo-light.svg" alt="Damico Health" width="225" height="40"><br>Damico Health Inc. is a registered 501(c)(3) nonprofit. &copy; {{year}}</p>
 </main>
 </body>
 </html>
