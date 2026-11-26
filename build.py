@@ -111,6 +111,7 @@ def build(target):
     out = ROOT / target
     if out.exists(): shutil.rmtree(out)
     shutil.copytree(SRC / "assets", out / "assets", ignore=shutil.ignore_patterns("manifest.json", "fonts" if target == "preview" else "__none__", "fonts.css" if target == "preview" else "__none__"))
+    shutil.copy(SRC / "assets/img/favicon.ico", out / "favicon.ico")  # crawlers and old browsers look here
     if (ROOT / "HOLDING").exists():
         return build_holding(target, out)
     layout = (SRC / "layout.html").read_text()

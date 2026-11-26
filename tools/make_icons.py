@@ -62,4 +62,7 @@ f = ImageFont.truetype(buf, size=int(P * 0.68 * upm / ink_w))
 l, t, r, b = d.textbbox((0, 0), TEXT, font=f)
 d.text(((P - (r - l)) / 2 - l, (P - (b - t)) / 2 - t), TEXT, font=f, fill=ORANGE)
 im.resize((180, 180), Image.LANCZOS).save(IMG / "touch-icon.png")
-print("wrote favicon.svg and touch-icon.png")
+# Search engines (Google among them) do not read SVG icons, so also provide PNG and ICO versions
+im.resize((192, 192), Image.LANCZOS).save(IMG / "favicon-192.png")
+im.save(IMG / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
+print("wrote favicon.svg, favicon-192.png, favicon.ico and touch-icon.png")
